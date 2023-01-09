@@ -1,0 +1,19 @@
+<div class="alert alert-danger" *ngIf="error">
+  {{error.message}}
+</div>
+<div *ngIf="upcoming.length>0">
+<div class="alert alert-warning " *ngIf="upcoming.length>0">
+  {{upcoming.length}} film bulundu
+</div>
+</div>
+    <div class="row row-cols-4">
+    <div class="col card mb-3 p-2" *ngFor="let item of upcoming">
+        <img src="https://image.tmdb.org/t/p/w500/{{item.poster_path}}"  class="card-img-top" alt="">
+        <div class="card-body">
+            <h2 class="card-title">{{item.title}}</h2>
+             <p class="card-text">{{item.overview}}</p>
+         
+        <!-- <button (click)="addToList($event,item)" class="btn btn-sm btn-success ms-1 ">Listeye Ekle</button> -->
+        </div>
+      </div>
+    </div>
